@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="conteiner">
+<div class="container">
 
     @component('admin.components.breadcrumb')
     @slot('title') Список категорий @endslot
@@ -19,23 +19,23 @@
             <th>Публикация</th>
             <th class="text-right">Действие</th>
         </thead>
-    </table>
-    <tbody>
-        @forelse ($categories as $category)
-        <tr>
-            <td>{{$category->title}}</td>
-            <td>{{$category->published}}</td>
-            <td><a href="{{route('admin.category.edit', ['id' => $category->id])}}"><i class="fa fa-edit"></i></a></td>
 
-        </tr>
-        @empty
-        <tr>
-            <td colspan="3" class="text-center">
-                <h2 class="text-center">Данные отсутсвуют</h2>
-            </td>
-        </tr>
-        @endforelse
-    </tbody>
+        <tbody>
+            @forelse ($categories as $category)
+            <tr>
+                <td>{{$category->title}}</td>
+                <td>{{$category->published}}</td>
+                <td><a href="{{route('admin.category.edit', ['id' => $category->id])}}"><i class="fa fa-edit"></i></a></td>
+            </tr>
+            @empty
+            <tr>
+                <td colspan="3" class="text-center">
+                    <h2 class="text-center">Данные отсутсвуют</h2>
+                </td>
+            </tr>
+            @endforelse
+        </tbody>
+    </table>
     <tfoot>
         <tr>
             <td colspan="3">

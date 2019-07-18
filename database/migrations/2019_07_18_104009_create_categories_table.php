@@ -17,10 +17,10 @@ class CreateCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('slug')->unique();
-            $table->integer('parent_id')->nulllable();            
-            $table->tinyInteger('published')->nulllable();
-            $table->integer('created_by')->nulllable();
-            $table->integer('modified_by')->nulllable();
+            $table->integer('parent_id')->nullable();            
+            $table->tinyInteger('published')->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('modified_by')->nullable();            
             $table->timestamps();
         });
     }
