@@ -15,6 +15,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/fontawesome.min.css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -36,7 +37,7 @@
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Блог</a>
                             <ul class="dropdown-menu" role="menu">
-                                <li class="nav-item"><a href="" class="nav-link">Категории</a></li>
+                                <li class="nav-item"><a href="{{route('admin.category.index')}}" class="nav-link">Категории</a></li>
                                 <li class="nav-item"><a href="" class="nav-link">Материалы</a></li>
                             </ul>
                         </li>
@@ -78,7 +79,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 container">
             @yield('content')
         </main>
     </div>
