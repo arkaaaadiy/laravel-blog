@@ -40,7 +40,7 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Блог</a>
                             <ul class="dropdown-menu" role="menu">
                                 <li class="nav-item"><a href="{{route('admin.category.index')}}" class="nav-link">Категории</a></li>
-                                <li class="nav-item"><a href="" class="nav-link">Материалы</a></li>
+                                <li class="nav-item"><a href="{{route('admin.article.index')}}" class="nav-link">Материалы</a></li>                                
                             </ul>
                         </li>
                     </ul>
