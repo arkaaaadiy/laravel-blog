@@ -41,13 +41,19 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li>
-                            <a href="{{route('admin.index')}}" class="nav-link">Панель состояния</a>                            
+                            <a href="{{route('admin.index')}}" class="nav-link">Панель состояния</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Блог</a>
                             <ul class="dropdown-menu" role="menu">
                                 <li class="nav-item"><a href="{{route('admin.category.index')}}" class="nav-link">Категории</a></li>
                                 <li class="nav-item"><a href="{{route('admin.article.index')}}" class="nav-link">Материалы</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Управление пользователями</a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="nav-item"><a href="{{route('admin.user_managment.user.index')}}" class="nav-link">Пользователи</a></li>
                             </ul>
                         </li>
                     </ul>
