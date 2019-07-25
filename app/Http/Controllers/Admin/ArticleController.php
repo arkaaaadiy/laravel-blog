@@ -43,11 +43,15 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $article = Article::create($request->all());
+        $article = Article::create($request->except(['categories', 'downloads', 'files']));
 
         //Categories
         if($request->input('categories')) :
             $article->categories()->attach($request->input('categories'));
+        endif;
+
+        if($request->has('downloads')) :
+            $article->downloads()->attach($request->downloads);
         endif;
 
         return redirect()->route('admin.article.index');
@@ -88,12 +92,16 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        $article->update($request->except('slug'));
+        $article->update($request->except(['slug','categories', 'downloads', 'files']));
 
         // categories
         $article->categories()->detach();
-        if ($request->input('categories')) :
-            $article->categories()->attach($request->input('categories'));
+            if ($request->input('categories')) :
+                $article->categories()->attach($request->input('categories'));
+            endif;
+        $article->downloads()->detach();
+        if ($request->has('downloads')) :
+            $article->downloads()->attach($request->downloads);
         endif;
 
         return redirect()->route('admin.article.index');
@@ -108,6 +116,7 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         $article->categories()->detach();
+        $article->downloads()->detach();
         $article->delete();
 
         return redirect()->route('admin.article.index');

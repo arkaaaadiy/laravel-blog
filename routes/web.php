@@ -18,6 +18,9 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware' => ['auth']]
     Route::get('/', 'DashboardController@dashboard')->name('admin.index');
     Route::resource('/category', 'CategoryController', ['as'=>'admin']);
     Route::resource('/article', 'ArticleController', ['as'=>'admin']);
+
+    Route::resource('/download', 'DownloadController')->only(['store', 'update', 'destroy']);
+
     Route::group(['prefix' => 'user_managment', 'namespace' => 'Usermanagment'], function () {
         Route::resource('/user', 'UserController', ['as' => 'admin.user_managment']);    
     });

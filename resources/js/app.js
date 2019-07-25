@@ -7,11 +7,11 @@
 require('./bootstrap');
 
 //CKEDITOR
-$(document).ready(function () {
-     CKEDITOR.replace('description_short');
-     CKEDITOR.replace('description');
+// $(document).ready(function () {
+//      CKEDITOR.replace('description_short');
+//      CKEDITOR.replace('description');
     
-})
+// })
 
 window.Vue = require('vue');
 
@@ -27,14 +27,15 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('home-component', require('./components/HomeComponent.vue').default);
+Vue.component('upload-file-component', require('./components/admin/UploadFileComponent.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+ 
 const app = new Vue({
     el: '#app',
 });

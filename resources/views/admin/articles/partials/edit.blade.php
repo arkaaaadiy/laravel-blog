@@ -15,7 +15,7 @@
         <input type="hidden" name="_method" value="put">
         {{csrf_field()}}
 
-        @include('admin.articles.partials.form')
+        @include('admin.articles.partials._form')
 
         <input type="hidden" name="modified_by" value="{{Auth::id()}}" id="">
     </form>

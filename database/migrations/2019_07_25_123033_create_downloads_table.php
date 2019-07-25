@@ -14,11 +14,12 @@ class CreateDownloadsTable extends Migration
     public function up()
     {
         Schema::create('downloads', function (Blueprint $table) {
-            $table->string('title')->nullable();
-            $table->string('filename');
+            $table->bigIncrements('id');
+            $table->string('title')->nullable();           
             $table->string('path');
             $table->string('mime')->nullable();
             $table->string('size')->nullable();
+            $table->timestamps();
         });
     }
 
